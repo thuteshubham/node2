@@ -8,7 +8,7 @@ let generateToken = (data, cb) => {
   try {
     let claims = {
       jwtid: shortid.generate(),
-      iat: Date.now(),
+      iat: Math.floor(Date.now() / 1000),
       exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),
       sub: 'authToken',
       iss: 'edChat',
